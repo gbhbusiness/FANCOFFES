@@ -56,7 +56,7 @@ class PosCreateInvoice(models.TransientModel):
                 line_ids.append((0, 0, line_val))
         inv_val.update({'invoice_line_ids': line_ids})
         rec = self.env['account.move'].create(inv_val)
-        self.pos_order_ids.write({'state': 'done'})
+        self.pos_order_ids.write({'state': 'done_credit_note'})
         return {
             'name': _("Invoices"),
             'view_mode': 'form',

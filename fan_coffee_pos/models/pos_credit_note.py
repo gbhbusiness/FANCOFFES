@@ -15,7 +15,7 @@ class PosOrder(models.Model):
 
     _inherit = "pos.order"
 
-    state = fields.Selection(selection_add=[('credit_note', 'Delivery Note')])
+    state = fields.Selection(selection_add=[('credit_note', 'Delivery Note'), ('done_credit_note', 'Delivery Note')])
     is_delivery_note = fields.Boolean('Is Delivery Note')
 
     def write(self, vals):
